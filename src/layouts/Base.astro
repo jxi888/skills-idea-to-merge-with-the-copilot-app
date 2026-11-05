@@ -57,6 +57,7 @@ const { title = "Mona's Bookmark Manager App" } = Astro.props;
         --font-head: 'Monaspace Xenon', 'Monaspace Neon', ui-monospace, monospace;
       }
       * { box-sizing: border-box; }
+      [hidden] { display: none !important; }
       body {
         font-family: var(--font-body);
         line-height: 1.5;
@@ -129,8 +130,12 @@ const { title = "Mona's Bookmark Manager App" } = Astro.props;
         border-radius: var(--radius);
       }
       .bookmark .url { flex: 1 1 12rem; overflow-wrap: anywhere; }
+      .error { margin: 0 0 1rem; color: #dc2626; font-size: 0.85rem; }
+      .bookmark .sep { color: var(--muted); white-space: pre; }
+      li.bookmark { transition: border-color 0.15s, transform 0.15s; }
+      li.bookmark:hover { border-color: var(--accent); transform: translateY(-1px); }
       .bookmark .slug {
-        font-family: ui-monospace, "SF Mono", monospace;
+        font-family: var(--font-body);
         font-size: 0.85rem;
         padding: 0.15rem 0.5rem;
         border-radius: 999px;
